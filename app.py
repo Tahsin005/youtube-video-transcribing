@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from get_ytdlp_info import get_ytdlp_info
 from get_audio import download_audio_from_youtube
 from get_transcript import transcribe_audio_to_text
 
@@ -9,7 +10,20 @@ youtube_url = st.text_input("Enter YouTube URL:")
 if st.button("Transcribe"):
     if youtube_url:
         try:
-            audio_file_path = download_audio_from_youtube(youtube_url, output_path='.')
+            ydl_opts = {
+                'format': 'bestaudio/best',
+                'postprocessors': [{
+                    'key': 'FFmpegExtractAudio',
+                    'preferredcodec': 'mp3',
+                    'preferredquality': '192',
+                }],
+
+                'cookiefile': "cookies.txt",
+                'nocheckcertificate': True,
+                'outtmpl': os.path.join(".", '%(title)s.%(ext)s'),
+            }
+            ytdlp_info_dict = get_ytdlp_info(ydl_opts, youtube_url)
+            audio_file_path = download_audio_from_youtube(ydl_opts, ytdlp_info_dict)
 
             if os.path.exists(audio_file_path):
                 transcription = transcribe_audio_to_text(audio_file_path)
