@@ -65,3 +65,9 @@ Open the local Streamlit URL shown in the terminal, paste a YouTube link and cli
 - If download fails for age-restricted or private videos, provide a `cookies.txt` exported from your browser (project already references [cookies.txt](cookies.txt)).
 - Ensure ffmpeg is on PATH; yt-dlp uses it to convert/extract audio.
 - Large Whisper models require significant RAM / GPU. Use `small` or `base` for local CPU runs.
+
+## Preview
+
+<div align="center">
+  <img src="https://github.com/Tahsin005/youtube-video-transcribing/blob/main/assets/image.png" alt="readme image" />
+</div>
