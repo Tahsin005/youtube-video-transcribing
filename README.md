@@ -69,5 +69,8 @@ Open the local Streamlit URL shown in the terminal, paste a YouTube link and cli
 ## Preview
 
 <div align="center">
-  <img src="https://github.com/Tahsin005/youtube-video-transcribing/blob/main/assets/image.png" alt="readme image" />
+  <img src="https://github.com/Tahsin005/youtube-video-transcribing/blob/main/assets/img-v2-1.png" alt="readme image" />
+</div>
+<div align="center">
+  <img src="https://github.com/Tahsin005/youtube-video-transcribing/blob/main/assets/img-v2-2.png" alt="readme image" />
 </div>
