@@ -12,7 +12,8 @@ Simple Streamlit app that downloads audio from a YouTube video and transcribes i
 
 ## Features
 - Paste a YouTube URL in the UI and click "Transcribe".
-- Downloads best audio as MP3 (via yt-dlp + ffmpeg).
+- Download video thumbnail.
+- Download best audio as MP3 (via yt-dlp + ffmpeg).
 - Uses Whisper (`small` model by default) to produce a plain-text transcription.
 
 ## Prerequisites
@@ -55,6 +56,7 @@ Open the local Streamlit URL shown in the terminal, paste a YouTube link and cli
 
 ## Files of interest
 - `app.py` — Streamlit UI and orchestration
+- `get_ytdlp_info.py` — gets the video metadata from yt_dlp
 - `get_audio.py` — downloads and sanitizes audio filenames
 - `get_transcript.py` — runs Whisper transcription
 - `requirements.txt` — Python deps
